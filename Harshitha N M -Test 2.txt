@@ -1,0 +1,393 @@
+1.Method is a block of codes which will be execute when we call a particular function
+	Syntax : Access specifier, Non- access specifier,return type,Method name(parameters)
+    Two types of methods: a)User diefenied
+                          b)Built-in
+
+  *Method Overloading : Method overloading is same class name with different parameters
+
+program on static method:
+
+class Addition{
+
+ public static int add(int a,int b)
+
+{
+
+  int sum;
+
+  sum=a+b;
+
+  return sum;
+
+}
+public static int add(int a,int b,int c)
+
+{
+
+  int sum;
+
+  sum=a+b+c;
+
+  return sum;
+
+}
+public static int add(int a)
+
+{
+
+  int b=2;
+
+  int sum;
+
+  sum=a+b;
+
+  return sum;
+
+}
+
+}
+
+public class AdditionRunner{
+
+              public static void main(String[] args)
+
+                           {
+
+                                         int a=2,b=4;
+
+                                         int res1,res2,res3;
+
+                                         System.out.println("invoking main in AdditionRunner");
+
+                        res1=Addition.add(10,20);
+
+                                         System.out.println("Addition of two numbers a and b is "+res1);
+
+                                         res2=Addition(10,20,30);
+
+                                         System.out.println("Addition of three numbers a,b and c is "+res2);
+
+                                         res3=Addition(12);
+
+                        System.out.println("Addition of two numbers when we pass arguement a value 12 is "+12);
+
+                           }
+
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Variables is a container which stores a information in a contiginous manner
+	syntax : datatype variable name[]=values;
+   Types of Variables: 
+1.Instance variable: these are the types of the variable where we declarethe varibales inside the class outside the method and which is in        globalscope .This variable can also be called as non-Static variables.
+
+2.Static variables: These are the type of variable where it creates only one copy for all the instances that we create for the class.To access this variable we can access in two different ways i.e by using reference(object) and classname.
+
+3.Local variable: loacl variables are the type of variable where it is declared within a scope or within the methods.we cannot access these variables outside the scope or methods.
+
+ 
+4.Parameter variables : these are the type of varibales that is declared within the paranthesis of the methods.Where these variables can be initialized by passing values as arguement while calling the method.
+
+Ex.class Person{
+
+              String name;//instnace variable
+
+        static long phno;//static variable
+
+             
+
+        Person(String PersonName)//Here person name becomes parameter variable
+
+              {
+
+                           this.name=personName;
+
+              }
+
+             
+
+              static{
+
+            this.phno=9620689808l;
+
+                           }
+
+             
+
+              static void details()
+
+              {
+
+                           int age;//local variable
+
+                           age=28;
+
+                           System.out.println("The name of the person is "+this.name);
+
+                           System.out.println("The phone number of person is :"+phono);
+
+                           System.out.println("The age of the person is "+age);
+
+              }
+
+}
+
+class PersonRunner{
+
+              Public static void main(String[] args)
+
+              {
+
+                           Person p1=new Person("raju");
+
+                Person.phno=9964406090;
+
+                           p1.details();
+
+              }
+
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Heap memory: 
+   Stack memory:It creates different stack frames which stores method name,constructor name
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.Constructor overloading:
+   
+class Food{
+
+   String name;
+
+   String location;
+
+   boolean breakfast;
+
+   double price;
+
+   int time;
+
+  
+
+  Food()
+
+  {
+
+   System.out.println("Invoking food() no-arg constructor in Food);
+
+   }
+
+ 
+
+  Food(String name)
+
+  {
+
+   System.out.println("Invoking string constructor in Food);
+
+   this.name=name;
+
+   }
+
+ 
+
+  Food(String name,String location,boolean breakfast,double price,int time)
+
+  {
+
+    System.out.println("Invoking string,string,boolean,double,int constructor in Food);
+
+              this.name=name;
+
+              this.location=location;
+
+              this.breakfast=breakfast;
+
+              this.price=price;
+
+              this.time=time;
+
+   }
+
+ 
+
+   public void display()
+
+   {
+
+              System.out.println("Name of the food is "+thsi.name);
+
+              System.out.println("Location of the food available is "+this.location);
+
+              System.out.println("Whether breakfast is avialable or not?? "+this.breakfast);
+
+              System.out.println("Price for the food is "+this.price);
+
+              System.out.println("Time at which it starts is "+this.time);
+
+    }
+
+class FoodRunner{
+
+              public static void main(String[] args){
+
+              {
+
+                           System.out.println("Invoking main in FoodRunner");
+
+                           Food f1=new Food("Idli");
+
+                           f1.display();
+
+ 
+
+                Food f2=new Food();
+
+                           f2.display();
+
+ 
+
+                           Food f3=new Food("Dosa","Rajajinagar",true,35.0,10);
+
+                          f3.display();
+
+              }
+
+}
+
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Instance method overloading:
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Static variable and static method:
+	
+
+class Mobile{
+
+              String brand;
+
+        static int noOfcamera;
+
+             double price;
+
+ 
+
+              Mobile()
+
+              {
+
+                           System.out.println("invoking default constructor in Mobile");
+
+              }
+
+              static{
+
+                           noOfCamera=2;
+
+              }
+
+ 
+
+        static void details(String brand,double price)
+
+              {
+
+                           System.out.println("invoking details in Mobile");
+
+                System.out.println("the brand of the mobile is "+this.name);
+
+                           System.out.println("The price of the mobile is "+this.price);
+
+              }
+
+}
+
+ 
+
+public class MobileRunner{
+
+              public static void main(String[] args)
+
+              {
+
+                           System.out.println("Invoking the main in MobileRunner");
+
+                           Mobile m1=new Mobile();
+
+                          Mobile.details("Vivo",19000.0);
+
+                           System.out.println("The number of cameras is "+Mobile.noOfCameras);
+
+              }
+
+}
+
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.constructor chaining using this keyword
+
+class Mall{
+	String name;
+	String mallType;
+	String location;
+	String owner;
+	int components;
+	double constructionCost;
+	int areaInSqft;
+	
+	Mall(){
+		super();
+		System.out.println("Invoking no-arg constructor of Mall");
+	}
+	Mall(String name,String mallType){
+		this();
+		this.name=name;
+		this.mallType=mallType;
+		System.out.println("Invoking string,stringconstructor of Mall");	
+	}
+	Mall(String name,String mallType,String location){
+		this(name,mallType);
+		this.location=location;
+		System.out.println("Invoking string,string,string constructor of Mall");
+	}
+	Mall(String name,String mallType,String location,String owner){
+		this(name,mallType,location);
+		this.owner=owner;
+		System.out.println("Invoking string,string,String,string constructor of Mall");
+	}
+	Mall(String name,String mallType,String location,String owner,int components){
+		this(name,mallType,location,owner);
+		this.components=components;
+		System.out.println("Invoking string,String,string,String,int constructor of Mall");
+	}
+	Mall(String name,String mallType,String location,String owner,int components,double constructionCost){
+		this(name,mallType,location,owner,components);
+		this.constructionCost=constructionCost;
+		System.out.println("Invoking string,String,string,String,int,double constructor of Mall");
+	}
+	Mall(String name,String mallType,String location,String owner,int components,double constructionCost,int areaInSqft){
+		this(name,mallType,location,owner,components,constructionCost);
+		this.areaInSqft=areaInSqft;
+		System.out.println("Invoking string,double,String,string,int constructor of Mall");
+	}
+}
+
+
+class MallRunner{
+	public static void main(String[] args){
+		
+		Mall mall = new Mall("Orion mall","Shopping center");
+		
+		System.out.println("##################################");
+		
+		Mall mall1 = new Mall("City Center","Shopping mall","Shimoga","Amar");
+		
+		System.out.println("##################################");
+		
+		Mall mall2=new Mall("Orion mall","Shopping center","Bangalore","Brigade Group",150,200,82000);
+		
+	}
+}
